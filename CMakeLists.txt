@@ -26,6 +26,7 @@ set(BUILD_FOR_RUN OFF CACHE BOOL "")
 message("++ BUILD_FOR_RUN: " ${BUILD_FOR_RUN})
 
 # include(../of/openFrameworks.cmake)
+include(ofxaddon.cmake)
 set(OF_ROOT_DIR ../of)
 if(CMAKE_BUILD_TYPE MATCHES Release)
   set(OF_LIB_DIR "${OF_ROOT_DIR}/lib-linux/release-${OF_PLATFORM}-${ARCH_BIT}")
@@ -177,7 +178,7 @@ message(STATUS "openframeworks libraries:${OPENFRAMEWORKS_LIBRARIES}")
 include_directories(${OPENFRAMEWORKS_INCLUDE_DIRS})
 
 set(CMAKE_CXX_FLAGS
-        "-std=c++11 -fPIC -Wno-switch -Wno-c++11-narrowing -Wno-ignored-attributes -Wno-deprecated-register"
+        "-std=gnu++14 -fPIC -Wno-switch -Wno-c++11-narrowing -Wno-ignored-attributes -Wno-deprecated-register"
   )
 
 #// LIVECODING /////////////////////////////////////////////////////////////////
@@ -196,32 +197,33 @@ endif()
 
 #///////////////////////////////////////////////////////////////////////////////
 
-# ofxaddon(addons/ofxImGui)
-set(OFXADDON_DIR ${CMAKE_CURRENT_LIST_DIR}/addons/ofxImGui)
-include_directories("${CMAKE_CURRENT_LIST_DIR}/addons/ofxImGui/src")
-include_directories("${CMAKE_CURRENT_LIST_DIR}/addons/ofxImGui/libs")
-include_directories("${CMAKE_CURRENT_LIST_DIR}/addons/ofxImGui/libs/imgui/src")
+ofxaddon(addons/ofxImGui)
+ofxaddon(ofxAssimpModelLoader)
+# set(OFXADDON_DIR ${CMAKE_CURRENT_LIST_DIR}/addons/ofxImGui)
+# include_directories("${CMAKE_CURRENT_LIST_DIR}/addons/ofxImGui/src")
+# include_directories("${CMAKE_CURRENT_LIST_DIR}/addons/ofxImGui/libs")
+# include_directories("${CMAKE_CURRENT_LIST_DIR}/addons/ofxImGui/libs/imgui/src")
 
-file(GLOB_RECURSE OFXHEADERS
-  "${OFXADDON_DIR}/src/*.h"
-  "${OFXADDON_DIR}/src/*.hh"
-  "${OFXADDON_DIR}/src/*.hpp"
-  "${OFXADDON_DIR}/libs/*.h"
-  "${OFXADDON_DIR}/libs/*.hh"
-  "${OFXADDON_DIR}/libs/*.hpp"
-  )
+# file(GLOB_RECURSE OFXHEADERS
+#   "${OFXADDON_DIR}/src/*.h"
+#   "${OFXADDON_DIR}/src/*.hh"
+#   "${OFXADDON_DIR}/src/*.hpp"
+#   "${OFXADDON_DIR}/libs/*.h"
+#   "${OFXADDON_DIR}/libs/*.hh"
+#   "${OFXADDON_DIR}/libs/*.hpp"
+#   )
 
-file(GLOB_RECURSE OFXSOURCES
-  "${OFXADDON_DIR}/src/*.c"
-  "${OFXADDON_DIR}/src/*.cc"
-  "${OFXADDON_DIR}/src/*.cpp"
-  "${OFXADDON_DIR}/libs/*.c"
-  "${OFXADDON_DIR}/libs/*.cc"
-  "${OFXADDON_DIR}/libs/*.cpp"
-  )
-if(OFXSOURCES)
-  set(OFXADDONS_SOURCES ${OFXADDONS_SOURCES} ${OFXSOURCES})
-endif()
+# file(GLOB_RECURSE OFXSOURCES
+#   "${OFXADDON_DIR}/src/*.c"
+#   "${OFXADDON_DIR}/src/*.cc"
+#   "${OFXADDON_DIR}/src/*.cpp"
+#   "${OFXADDON_DIR}/libs/*.c"
+#   "${OFXADDON_DIR}/libs/*.cc"
+#   "${OFXADDON_DIR}/libs/*.cpp"
+#   )
+# if(OFXSOURCES)
+#   set(OFXADDONS_SOURCES ${OFXADDONS_SOURCES} ${OFXSOURCES})
+# endif()
 
 set(SOURCES
         src/main.cpp

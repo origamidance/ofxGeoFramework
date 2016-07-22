@@ -83,6 +83,8 @@ void ofLive::setup()
   rCPP.AddIncludeDir("../RuntimeCompiledCPlusPlus/Aurora");
   rCPP.AddIncludeDir("../addons/ofxImGui/src");
   rCPP.AddIncludeDir("../addons/ofxImGui/libs/imgui/src");
+  rCPP.AddIncludeDir("../../of/addons/ofxAssimpModelLoader/src");
+  rCPP.AddIncludeDir("../../of/addons/ofxAssimpModelLoader/libs/assimp/include/");
   rCPP.AddIncludeDir("..");
 
   {

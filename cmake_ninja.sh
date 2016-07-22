@@ -7,7 +7,7 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
     export CC="clang"
     export CXX="clang++"
 fi
-
+rm -rf build
 for arg in "$*"
 do
 		# cmake -DCMAKE_CXX_COMPILER=$CXX -DCMAKE_C_COMPILER=$CC -GNinja -DCMAKE_BUILD_TYPE=Release ..

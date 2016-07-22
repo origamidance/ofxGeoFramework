@@ -3,8 +3,10 @@
 #include "ofLiveMain.h"
 #include "ofxImGui.h"
 #include "ThemeTest.h"
+#include "ofxAssimpModelLoader.h"
 
 #define RED(x) "\033[31m" << x << "\033[0m"
+
 class ofApp : public ofLiveApp
 {
 public:
@@ -50,9 +52,6 @@ public:
 
     void messageReceived(ofMessage &);
 
-    void drawInteractionArea();
-    bool bShowHelp;
-    ofEasyCam cam; // add mouse controls for camera movement
     ofxImGui gui;
 
     ImVec4 backgroundColor;
@@ -69,6 +68,21 @@ public:
 
     ofTexture textureSource;
     GLuint textureSourceID;
+
+    ofxAssimpModelLoader model;
+    ofLight light;
+
+    // stores the info on the current file.
+    string curFileInfo;
+
+    //boolean to toggle help text
+    bool bHelpText;
+
+    // for demonstrating loading in models directly into a mesh without using ofxAssimpModelLoader
+    ofVboMesh mesh;
+    bool bUsingMesh;
+    ofEasyCam cam;
+
 
     SERIALIZE_BEGIN
         //SERIALIZE()
