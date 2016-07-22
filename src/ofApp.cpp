@@ -3,8 +3,8 @@
 REGISTERCLASS(ofApp)
 
 void ofApp::setup() {
-//    ofSetLogLevel(OF_LOG_VERBOSE);
-    ofBackground(0, 0, 0);
+    ofSetLogLevel(OF_LOG_VERBOSE);
+    ofBackground(100, 100, 100);
 //    ofBackground(255,255,255);
 
     ofSetVerticalSync(true);
@@ -13,14 +13,14 @@ void ofApp::setup() {
     ofEnableDepthTest();
 
     // load the first model
-    model.loadModel("penguin.dae", 20);
+    model.loadModel("penguin_color.stl", 20);
     // model info
-    curFileInfo = ".dae";
+    curFileInfo = ".stl";
 
     // this loads in the model directly into a mesh
     // ofMesh can only read in .plys that are in the ascii and not in the binary format.
     bUsingMesh = false;
-    mesh.load("penguin.stl");
+    mesh.load("penguin.ply");
 
     //you can create as many rotations as you want
     //choose which axis you want it to effect
@@ -38,16 +38,16 @@ void ofApp::setup() {
     bHelpText = true;
 
 
-//    gui.setup();
-//    ImGui::GetIO().MouseDrawCursor = false;
+    gui.setup();
+    ImGui::GetIO().MouseDrawCursor = false;
 //    backgroundColor = ofColor(114, 144, 154);
-//    show_test_window = true;
-//    show_another_window = false;
-//    floatValue = 0.0f;
-//    intValue = 3;
-//    ofSetCircleResolution(120);
-//
-//    ofLogVerbose() << "textureSourceID:" << textureSourceID;
+    show_test_window = true;
+    show_another_window = false;
+    floatValue = 0.0f;
+    intValue = 3;
+    ofSetCircleResolution(120);
+
+    ofLogVerbose() << "textureSourceID:" << textureSourceID;
 }
 
 bool doSetTheme = false;
@@ -55,21 +55,18 @@ bool doSetTheme = false;
 void ofApp::update() {
 //    model.setRotation(1, 270 + ofGetElapsedTimef() * 60, 0, 1, 0);
 
-//    if (doSetTheme) {
-//        doSetTheme = false;
-//        gui.setTheme(new ThemeTest());
-//    }
-//    if (cam.getMouseInputEnabled())
-//    {
-//        if (ImGui::IsMouseHoveringAnyWindow())
-//        {
-//            cam.disableMouseInput();
-//        }
-//    }
-//    else if (!ImGui::IsMouseHoveringAnyWindow())
-//    {
-//        cam.enableMouseInput();
-//    }
+    if (doSetTheme) {
+        doSetTheme = false;
+        gui.setTheme(new ThemeTest());
+    }
+    if (cam.getMouseInputEnabled()) {
+        if (ImGui::IsMouseHoveringAnyWindow()) {
+            cam.disableMouseInput();
+        }
+    }
+    else if (!ImGui::IsMouseHoveringAnyWindow()) {
+        cam.enableMouseInput();
+    }
 }
 
 bool doThemeColorsWindow = false;
@@ -91,7 +88,7 @@ void ofApp::draw() {
         cam.begin();
         ofDrawAxis(200);
         ofDrawGridPlane(10, 10, false);
-        ofColor(255, 255);
+        ofColor(255, 255, 255);
         model.drawFaces();
         cam.end();
     }
@@ -112,62 +109,62 @@ void ofApp::draw() {
     }
 
 
-//    //required to call this at beginning
-//    gui.begin();
-//    //In between gui.begin() and gui.end() you can use ImGui as you would anywhere else
-//
-//    // 1. Show a simple window
-//    {
-//        ImGui::Text("hahaha!");
-//        ImGui::SliderFloat("Float", &floatValue, 0.0f, 1.0f);
-//        ImGui::SliderInt("int", &intValue, 0, 200);
-//
-//        //this will change the app background color
-//        ImGui::ColorEdit3("Background Color", (float *) &backgroundColor);
-//        if (ImGui::Button("Test Window")) {
-//            show_test_window = !show_test_window;
-//        }
-//
-//        if (ImGui::Button("Another Window")) {
-//            //bitwise OR
-//            show_another_window ^= 1;
-//
-//        }
-//        ImGui::Text("Application average %.3f ms/frame (%.1f FPS)", 1000.0f / ImGui::GetIO().Framerate,
-//                    ImGui::GetIO().Framerate);
-//    }
-////     2. Show another window, this time using an explicit ImGui::Begin and ImGui::End
-//    if (show_another_window) {
-//        //note: ofVec2f and ImVec2f are interchangeable
-//        ImGui::SetNextWindowSize(ofVec2f(200, 100), ImGuiSetCond_FirstUseEver);
-//        ImGui::Begin("Another Window", &show_another_window);
-//        ImGui::Text("nihao");
-//        ImGui::End();
-//    }
-//
-//    // // 3. Show the ImGui test window. Most of the sample code is in ImGui::ShowTestWindow()
-//    // if (show_test_window) {
-//    //     ImGui::SetNextWindowPos(ofVec2f(650, 20), ImGuiSetCond_FirstUseEver);
-//    //     ImGui::ShowTestWindow(&show_test_window);
-//    // }
-//
-//
-////    bool pressed = ImGui::ImageButton((ImTextureID) (uintptr_t) imageButtonID, ImVec2(200, 200));
-////    pressed = ImGui::ImageButton((ImTextureID) (uintptr_t) pixelsButtonID, ImVec2(200, 200));
-////    pressed = ImGui::ImageButton((ImTextureID) (uintptr_t) textureSourceID, ImVec2(200, 200));
-//
-//
-//    if (doThemeColorsWindow) {
-//        gui.openThemeColorWindow();
-//
-//    }
-//
-//    //required to call this at end
-//    gui.end();
-//
-//    if (textureSource.isAllocated()) {
-//        //textureSource.draw(ofRandom(200), ofRandom(200));
-//    }
+    //required to call this at beginning
+    gui.begin();
+    //In between gui.begin() and gui.end() you can use ImGui as you would anywhere else
+
+    // 1. Show a simple window
+    {
+        ImGui::Text("hahaha!");
+        ImGui::SliderFloat("Float", &floatValue, 0.0f, 1.0f);
+        ImGui::SliderInt("int", &intValue, 0, 200);
+
+        //this will change the app background color
+        ImGui::ColorEdit3("Background Color", (float *) &backgroundColor);
+        if (ImGui::Button("Test Window")) {
+            show_test_window = !show_test_window;
+        }
+
+        if (ImGui::Button("Another Window")) {
+            //bitwise OR
+            show_another_window ^= 1;
+
+        }
+        ImGui::Text("Application average %.3f ms/frame (%.1f FPS)", 1000.0f / ImGui::GetIO().Framerate,
+                    ImGui::GetIO().Framerate);
+    }
+//     2. Show another window, this time using an explicit ImGui::Begin and ImGui::End
+    if (show_another_window) {
+        //note: ofVec2f and ImVec2f are interchangeable
+        ImGui::SetNextWindowSize(ofVec2f(200, 100), ImGuiSetCond_FirstUseEver);
+        ImGui::Begin("Another Window", &show_another_window);
+        ImGui::Text("nihao");
+        ImGui::End();
+    }
+
+    // // 3. Show the ImGui test window. Most of the sample code is in ImGui::ShowTestWindow()
+    // if (show_test_window) {
+    //     ImGui::SetNextWindowPos(ofVec2f(650, 20), ImGuiSetCond_FirstUseEver);
+    //     ImGui::ShowTestWindow(&show_test_window);
+    // }
+
+
+//    bool pressed = ImGui::ImageButton((ImTextureID) (uintptr_t) imageButtonID, ImVec2(200, 200));
+//    pressed = ImGui::ImageButton((ImTextureID) (uintptr_t) pixelsButtonID, ImVec2(200, 200));
+//    pressed = ImGui::ImageButton((ImTextureID) (uintptr_t) textureSourceID, ImVec2(200, 200));
+
+
+    if (doThemeColorsWindow) {
+        gui.openThemeColorWindow();
+
+    }
+
+    //required to call this at end
+    gui.end();
+
+    if (textureSource.isAllocated()) {
+        //textureSource.draw(ofRandom(200), ofRandom(200));
+    }
 
 }
 
@@ -178,10 +175,10 @@ void ofApp::exit() {
 void ofApp::keyPressed(ofKeyEventArgs &key) {
     ofLogVerbose(__FUNCTION__) << key.key;
     switch (key.key) {
-//        case 'c':
-//            if(cam.getMouseInputEnabled()) cam.disableMouseInput();
-//            else cam.enableMouseInput();
-//            break;
+        case 'c':
+            if (cam.getMouseInputEnabled()) cam.disableMouseInput();
+            else cam.enableMouseInput();
+            break;
 
         case 'f':
             ofToggleFullscreen();
@@ -217,10 +214,9 @@ void ofApp::keyPressed(ofKeyEventArgs &key) {
             break;
         case '5':
             bUsingMesh = false;
-
-            model.loadModel("/home/origamidance/Research/ofxGeoFramework/bin/data/penguin.stl");
-            model.setPosition(0, 0, 0);
+            model.loadModel("penguin_color.stl");
             curFileInfo = ".stl";
+            glShadeModel(GL_SMOOTH);
             break;
         case '6':
             bUsingMesh = true;
