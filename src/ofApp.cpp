@@ -48,6 +48,7 @@ void ofApp::draw() {
     ofBackground(0);
 
     ofSetColor(255,0,0);
+    ofDrawCircle(100,200,intValue);
     ofFill();
     ofDrawBox(30);
     ofNoFill();
@@ -67,26 +68,7 @@ void ofApp::draw() {
     ofFill();
     drawInteractionArea();
     ofSetColor(255);
-    string msg = string("Using mouse inputs to navigate (press 'c' to toggle): ") + (cam.getMouseInputEnabled() ? "YES" : "NO");
-    msg += string("\nShowing help (press 'h' to toggle): ")+ (bShowHelp ? "YES" : "NO");
-    if (bShowHelp) {
-        msg += "\n\nLEFT MOUSE BUTTON DRAG:\nStart dragging INSIDE the yellow circle -> camera XY rotation .\nStart dragging OUTSIDE the yellow circle -> camera Z rotation (roll).\n\n";
-        msg += "LEFT MOUSE BUTTON DRAG + TRANSLATION KEY (" + ofToString(cam.getTranslationKey()) + ") PRESSED\n";
-        msg += "OR MIDDLE MOUSE BUTTON (if available):\n";
-        msg += "move over XY axes (truck and boom).\n\n";
-        msg += "RIGHT MOUSE BUTTON:\n";
-        msg += "move over Z axis (dolly)";
-    }
-    msg += "\n\nfps: " + ofToString(ofGetFrameRate(), 2);
-    ofDrawBitmapStringHighlight(msg, 10, 20);
 
-    //backgroundColor is stored as an ImVec4 type but is converted to ofColor automatically
-    backgroundColor = ofColor(114, 144, 154);
-    ofSetBackgroundColor(backgroundColor);
-    ofDrawCircle(200, 300,intValue);
-    ofDrawCircle(300, 400, 100);
-    ofSetColor(0, 255, 255);
-    ofDrawCircle(100, 200, 20);
     //required to call this at beginning
     gui.begin();
     //In between gui.begin() and gui.end() you can use ImGui as you would anywhere else

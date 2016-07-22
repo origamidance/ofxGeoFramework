@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
     export CCACHE_SLOPPINESS=pch_defines,time_macros
      export CC=clang
@@ -20,9 +21,9 @@ do
 	   cd build/
 	  if [[ "$arg" = "debug" ]]
 	  then
-		    CC=$CC CXX=$CXX cmake -GNinja -DCMAKE_BUILD_TYPE=Debug ..
+		    CC=$CC CXX=$CXX cmake -GNinja -DCMAKE_BUILD_TYPE=Debug -DBUILD_FOR_RUN=ON ..
 	  elif [[ "$arg" = "release" ]]
 	  then
-		    cmake -DCMAKE_CXX_COMPILER=$CXX -DCMAKE_C_COMPILER=$CC -GNinja -DCMAKE_BUILD_TYPE=Release ..
+		    cmake -DCMAKE_CXX_COMPILER=$CXX -DCMAKE_C_COMPILER=$CC -GNinja -DCMAKE_BUILD_TYPE=Release -DBUILD_FOR_RUN=ON ..
 	  fi
 done

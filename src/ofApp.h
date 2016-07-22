@@ -4,6 +4,7 @@
 #include "ofxImGui.h"
 #include "ThemeTest.h"
 
+#define RED(x) "\033[31m" << x << "\033[0m"
 class ofApp : public ofLiveApp
 {
 public:
