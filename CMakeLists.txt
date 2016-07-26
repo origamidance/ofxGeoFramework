@@ -134,7 +134,7 @@ set(OPENFRAMEWORKS_INCLUDE_DIRS
 )
 
 if (BUILD_FOR_RUN)
-
+    add_definitions(-DRUNCODE)
 file(GLOB_RECURSE OPENFRAMEWORKS_LIBS "${OF_LIB_DIR}/*.so")
 if(NOT OPENFRAMEWORKS_LIBS)
  message(FATAL_ERROR "No shared openFrameworks libraries found in ${OF_LIB_DIR} folder.")
@@ -229,8 +229,8 @@ set(SOURCES
         src/main.cpp
         src/ofApp.cpp
         src/ofLive.cpp
-        src/ofLive.h
         src/ofApp.h
+        src/ofLive.h
         src/ofLiveMain.h
 )
 

@@ -1,6 +1,9 @@
 #include "ofApp.h"
 
+#ifdef RUNCODE
 REGISTERCLASS(ofApp)
+#endif
+
 
 void ofApp::setup() {
     ofSetLogLevel(OF_LOG_VERBOSE);
@@ -73,27 +76,39 @@ bool doThemeColorsWindow = false;
 
 void ofApp::draw() {
 
-    light.setPosition(0, 0, 500);
-    model.setScale(0.5, 0.5, 0.5);
+    cam.begin();
+    ofEnableLighting();
     light.enable();
+    ofPoint lightPos(200, 100, 100);
+    light.setPosition(lightPos);
+    light.draw();
+    light.setSpotlight();
+    light.setSpotlightCutOff(50);
+    light.setDiffuseColor(ofColor::white);
+    light.lookAt(ofVec3f::zero());
+    model.setScale(0.5, 0.5, 0.5);
+//    light.enable();
 
     // draws the ply file loaded into the mesh is you pressed 6
     if (bUsingMesh) {
-        cam.begin();
+//        cam.begin();
         mesh.draw();
-        cam.end();
+//        cam.end();
     }
         // draws all the other file types which are loaded into model.
     else {
-        cam.begin();
+//        cam.begin();
         ofDrawAxis(200);
         ofDrawGridPlane(10, 10, false);
         ofColor(255, 255, 255);
         model.drawFaces();
-        cam.end();
+//        cam.end();
     }
 
+//    light.disable();
     light.disable();
+    ofDisableLighting();
+    cam.end();
 
     // display help text if it is enable
     if (bHelpText) {
@@ -107,7 +122,6 @@ void ofApp::draw() {
         ss << "(h): Toggle help." << endl;
         ofDrawBitmapString(ss.str().c_str(), 20, 20);
     }
-
 
     //required to call this at beginning
     gui.begin();

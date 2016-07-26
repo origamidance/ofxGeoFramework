@@ -10,7 +10,8 @@
 #include <RuntimeObjectSystem/IObject.h>
 #endif
 
-#ifdef RCCPP
+//#ifdef RCCPP
+#if defined(RCCPP) && defined(RUNCODE)
 #define ofLiveApp TInterface<IID_IOBJECT,IObject>, public ofBaseApp
 #else
 #define ofLiveApp ofBaseApp
@@ -57,6 +58,7 @@ struct RCPPLogger : ICompilerLogger
 #ifdef TARGET_LINUX
 RUNTIME_COMPILER_LINKLIBRARY(
 "-DRCCPP "
+        "-DRUNCODE"
 "-DOF_USING_GTK "
 "-DOF_SOUND_PLAYER_OPENAL "
 "-DOF_SOUNDSTREAM_RTAUDIO "

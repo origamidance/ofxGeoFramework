@@ -60,6 +60,7 @@ public:
 
     float floatValue;
     int intValue;
+
     ofImage imageButtonSource;
     GLuint imageButtonID;
 
