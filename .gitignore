@@ -1,3 +1,4 @@
+
 *~
 *.txt.user
 *.DS_Store
@@ -8,5 +9,3 @@ debug/*
 bin/
 
 .ninja*
-
-.idea/
