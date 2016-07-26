@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="CPP_MODULE" version="4">
+  <component name="NewModuleRootManager">
+    <content url="file://$USER_HOME$/.CLion2016.2/system/cmake/generated/ofxGeoFramework-c3b25a2b/c3b25a2b/Debug/cotire/ofApp_CXX_prefix.hxx">
+      <sourceFolder url="file://$USER_HOME$/.CLion2016.2/system/cmake/generated/ofxGeoFramework-c3b25a2b/c3b25a2b/Debug/cotire/ofApp_CXX_prefix.hxx" isTestSource="false" />
+    </content>
+    <content url="file://$USER_HOME$/.CLion2016.2/system/cmake/generated/ofxGeoFramework-c3b25a2b/c3b25a2b/MinSizeRel/cotire/ofApp_CXX_prefix.hxx">
+      <sourceFolder url="file://$USER_HOME$/.CLion2016.2/system/cmake/generated/ofxGeoFramework-c3b25a2b/c3b25a2b/MinSizeRel/cotire/ofApp_CXX_prefix.hxx" isTestSource="false" />
+    </content>
+    <content url="file://$USER_HOME$/.CLion2016.2/system/cmake/generated/ofxGeoFramework-c3b25a2b/c3b25a2b/RelWithDebInfo/cotire/ofApp_CXX_prefix.hxx">
+      <sourceFolder url="file://$USER_HOME$/.CLion2016.2/system/cmake/generated/ofxGeoFramework-c3b25a2b/c3b25a2b/RelWithDebInfo/cotire/ofApp_CXX_prefix.hxx" isTestSource="false" />
+    </content>
+    <content url="file://$USER_HOME$/.CLion2016.2/system/cmake/generated/ofxGeoFramework-c3b25a2b/c3b25a2b/Release/cotire/ofApp_CXX_prefix.hxx">
+      <sourceFolder url="file://$USER_HOME$/.CLion2016.2/system/cmake/generated/ofxGeoFramework-c3b25a2b/c3b25a2b/Release/cotire/ofApp_CXX_prefix.hxx" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$/../of/addons/ofxAssimpModelLoader/src/ofxAssimpAnimation.cpp">
+      <sourceFolder url="file://$MODULE_DIR$/../of/addons/ofxAssimpModelLoader/src/ofxAssimpAnimation.cpp" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$/../of/addons/ofxAssimpModelLoader/src/ofxAssimpMeshHelper.cpp">
+      <sourceFolder url="file://$MODULE_DIR$/../of/addons/ofxAssimpModelLoader/src/ofxAssimpMeshHelper.cpp" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$/../of/addons/ofxAssimpModelLoader/src/ofxAssimpModelLoader.cpp">
+      <sourceFolder url="file://$MODULE_DIR$/../of/addons/ofxAssimpModelLoader/src/ofxAssimpModelLoader.cpp" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$/../of/addons/ofxAssimpModelLoader/src/ofxAssimpTexture.cpp">
+      <sourceFolder url="file://$MODULE_DIR$/../of/addons/ofxAssimpModelLoader/src/ofxAssimpTexture.cpp" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/ofxaddon.cmake" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/CMakeLists.txt" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/cmake_modules/FindSndfile.cmake" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/cmake_modules/FindUDev.cmake" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/cmake_modules/FindPixman.cmake" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/cmake_modules/FindGStreamer.cmake" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/cmake_modules/cotire.cmake" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/cmake_modules/FindMPG123.cmake" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/cmake_modules/FindGlib.cmake" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/addons/ofxImGui/src/ofxImGui.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/addons/ofxImGui/src/BaseTheme.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/addons/ofxImGui/src/EngineOpenGLES.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/addons/ofxImGui/src/ofxImGui.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/addons/ofxImGui/src/BaseTheme.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/addons/ofxImGui/src/EngineOpenGLES.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/addons/ofxImGui/src/EngineGLFW.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/addons/ofxImGui/src/BaseEngine.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/addons/ofxImGui/src/EngineGLFW.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/addons/ofxImGui/src/BaseEngine.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/addons/ofxImGui/libs/imgui/src/imgui_draw.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/addons/ofxImGui/libs/imgui/src/imgui.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/addons/ofxImGui/libs/imgui/src/imgui_demo.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/addons/ofxImGui/libs/imgui/src/imgui.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/main.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/ofLive.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/ofLiveMain.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/ofApp.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/ofLive.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/ofApp.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/RuntimeCompiledCPlusPlus/Aurora/RuntimeObjectSystem/RuntimeObjectSystem.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/RuntimeCompiledCPlusPlus/Aurora/RuntimeObjectSystem/ObjectInterfacePerModuleSource.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/RuntimeCompiledCPlusPlus/Aurora/RuntimeObjectSystem/ObjectFactorySystem/ObjectFactorySystem.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/RuntimeCompiledCPlusPlus/Aurora/RuntimeObjectSystem/ObjectFactorySystem/ObjectFactorySystem.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/RuntimeCompiledCPlusPlus/Aurora/RuntimeObjectSystem/RuntimeObjectSystem_PlatformPosix.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/RuntimeCompiledCPlusPlus/Aurora/RuntimeObjectSystem/RuntimeObjectSystem.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/RuntimeCompiledCPlusPlus/Aurora/RuntimeObjectSystem/SimpleSerializer/SimpleSerializer.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/RuntimeCompiledCPlusPlus/Aurora/RuntimeObjectSystem/SimpleSerializer/SimpleSerializer.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/RuntimeCompiledCPlusPlus/Aurora/cmake/ProjectFiles.cmake" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/RuntimeCompiledCPlusPlus/Aurora/CMakeLists.txt" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/RuntimeCompiledCPlusPlus/Aurora/RuntimeCompiler/FileChangeNotifier.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/RuntimeCompiledCPlusPlus/Aurora/RuntimeCompiler/BuildTool.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/RuntimeCompiledCPlusPlus/Aurora/RuntimeCompiler/Compiler_PlatformPosix.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/RuntimeCompiledCPlusPlus/Aurora/RuntimeCompiler/FileChangeNotifier.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/RuntimeCompiledCPlusPlus/Aurora/RuntimeCompiler/SimpleFileWatcher/FileWatcherLinux.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/RuntimeCompiledCPlusPlus/Aurora/RuntimeCompiler/SimpleFileWatcher/FileWatcher.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/RuntimeCompiledCPlusPlus/Aurora/RuntimeCompiler/SimpleFileWatcher/FileWatcherLinux.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/RuntimeCompiledCPlusPlus/Aurora/RuntimeCompiler/SimpleFileWatcher/FileWatcher.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/RuntimeCompiledCPlusPlus/Aurora/RuntimeCompiler/FileMonitor.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/RuntimeCompiledCPlusPlus/Aurora/RuntimeCompiler/BuildTool.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/RuntimeCompiledCPlusPlus/Aurora/RuntimeCompiler/FileMonitor.h" isTestSource="false" />
+    </content>
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module-library">
+      <library name="Header Search Paths">
+        <CLASSES>
+          <root url="file:///usr/include" />
+          <root url="file:///usr/lib/gcc/x86_64-pc-linux-gnu/6.1.1/include" />
+          <root url="file:///usr/lib/gcc/x86_64-pc-linux-gnu/6.1.1/include-fixed" />
+          <root url="file:///usr/lib/dbus-1.0/include" />
+          <root url="file:///usr/lib/gstreamer-1.0/include" />
+          <root url="file:///usr/lib/glib-2.0/include" />
+          <root url="file:///usr/local/include" />
+          <root url="file://$MODULE_DIR$/../of/src/poco" />
+          <root url="file://$MODULE_DIR$/../of/src/kissfft" />
+          <root url="file://$MODULE_DIR$/../of/src/glew" />
+          <root url="file://$MODULE_DIR$/../of/src/glfw" />
+          <root url="file://$MODULE_DIR$/../of/src/freeimage" />
+          <root url="file://$MODULE_DIR$/../of/src/openframeworks" />
+          <root url="file://$MODULE_DIR$/../of/src/rtaudio" />
+          <root url="file://$MODULE_DIR$/../of/src/libtess2" />
+          <root url="file://$MODULE_DIR$/../of/src/utf8cpp" />
+          <root url="file://$MODULE_DIR$/../of/addons/ofxAssimpModelLoader/src" />
+        </CLASSES>
+        <SOURCES>
+          <root url="file:///usr/include" />
+          <root url="file:///usr/lib/gcc/x86_64-pc-linux-gnu/6.1.1/include" />
+          <root url="file:///usr/lib/gcc/x86_64-pc-linux-gnu/6.1.1/include-fixed" />
+          <root url="file:///usr/lib/dbus-1.0/include" />
+          <root url="file:///usr/lib/gstreamer-1.0/include" />
+          <root url="file:///usr/lib/glib-2.0/include" />
+          <root url="file:///usr/local/include" />
+          <root url="file://$MODULE_DIR$/../of/src/poco" />
+          <root url="file://$MODULE_DIR$/../of/src/kissfft" />
+          <root url="file://$MODULE_DIR$/../of/src/glew" />
+          <root url="file://$MODULE_DIR$/../of/src/glfw" />
+          <root url="file://$MODULE_DIR$/../of/src/freeimage" />
+          <root url="file://$MODULE_DIR$/../of/src/openframeworks" />
+          <root url="file://$MODULE_DIR$/../of/src/rtaudio" />
+          <root url="file://$MODULE_DIR$/../of/src/libtess2" />
+          <root url="file://$MODULE_DIR$/../of/src/utf8cpp" />
+          <root url="file://$MODULE_DIR$/../of/addons/ofxAssimpModelLoader/src" />
+        </SOURCES>
+        <excluded>
+          <root url="file://$MODULE_DIR$/../of/addons/ofxAssimpModelLoader/src/ofxAssimpAnimation.cpp" />
+          <root url="file://$MODULE_DIR$/../of/addons/ofxAssimpModelLoader/src/ofxAssimpMeshHelper.cpp" />
+          <root url="file://$MODULE_DIR$/../of/addons/ofxAssimpModelLoader/src/ofxAssimpTexture.cpp" />
+          <root url="file://$MODULE_DIR$/../of/addons/ofxAssimpModelLoader/src/ofxAssimpModelLoader.cpp" />
+        </excluded>
+      </library>
+    </orderEntry>
+  </component>
+</module>

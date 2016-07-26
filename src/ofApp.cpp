@@ -36,6 +36,10 @@ void ofApp::setup() {
 //    model.setPosition(ofGetWidth()/2, ofGetHeight()/2, 0);
     model.setPosition(0, 0, 0);
     light.setPosition(0, 0, 500);
+    mat.setDiffuseColor(ofColor::green);
+    mat.setAmbientColor(ofColor::green);
+    mat.setShininess(120);
+    mat.setColors(ofColor::green, ofColor::green, ofColor::green, ofColor::green);
 
     //set help text to display by default
     bHelpText = true;
@@ -79,9 +83,7 @@ void ofApp::draw() {
     cam.begin();
     ofEnableLighting();
     light.enable();
-    ofPoint lightPos(200, 100, 100);
-    light.setPosition(lightPos);
-    light.draw();
+    light.setPosition(lightPosArray[0], lightPosArray[1], lightPosArray[2]);
     light.setSpotlight();
     light.setSpotlightCutOff(50);
     light.setDiffuseColor(ofColor::white);
@@ -101,13 +103,16 @@ void ofApp::draw() {
         ofDrawAxis(200);
         ofDrawGridPlane(10, 10, false);
         ofColor(255, 255, 255);
+        mat.begin();
         model.drawFaces();
+        mat.end();
 //        cam.end();
     }
 
 //    light.disable();
     light.disable();
     ofDisableLighting();
+    light.draw();
     cam.end();
 
     // display help text if it is enable
@@ -130,11 +135,9 @@ void ofApp::draw() {
     // 1. Show a simple window
     {
         ImGui::Text("hahaha!");
-        ImGui::SliderFloat("Float", &floatValue, 0.0f, 1.0f);
-        ImGui::SliderInt("int", &intValue, 0, 200);
 
         //this will change the app background color
-        ImGui::ColorEdit3("Background Color", (float *) &backgroundColor);
+        ImGui::DragInt3("light pos", lightPosArray, 1, -100, 100);
         if (ImGui::Button("Test Window")) {
             show_test_window = !show_test_window;
         }

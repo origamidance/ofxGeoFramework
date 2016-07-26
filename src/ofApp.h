@@ -72,6 +72,8 @@ public:
 
     ofxAssimpModelLoader model;
     ofLight light;
+    int lightPosArray[3];
+    ofMaterial mat;
 
     // stores the info on the current file.
     string curFileInfo;
