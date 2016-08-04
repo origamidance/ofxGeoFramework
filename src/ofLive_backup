@@ -8,9 +8,9 @@ void ofLive::setup()
 
 # ifdef TARGET_LINUX
 # ifdef NDEBUG
-  rCPP.AddLibraryDir("../of/lib-linux/release-x86-64");
+  rCPP.AddLibraryDir("../../of/lib-linux/release-x86-64");
 # else
-  rCPP.AddLibraryDir("../of/lib-linux/debug-x86-64");
+  rCPP.AddLibraryDir("../../of/lib-linux/debug-x86-64");
 # endif
 # endif
 
@@ -35,58 +35,58 @@ void ofLive::setup()
   rCPP.AddIncludeDir("/usr/lib/x86_64-linux-gnu/glib-2.0/include");
 # endif
 
-  rCPP.AddIncludeDir("../of/src/freeimage");
-  rCPP.AddIncludeDir("../of/src/freeimage/OpenEXR");
-  rCPP.AddIncludeDir("../of/src/freeimage/OpenEXR/Half");
-  rCPP.AddIncludeDir("../of/src/freeimage/OpenEXR/Iex");
-  rCPP.AddIncludeDir("../of/src/freeimage/OpenEXR/IlmImf");
-  rCPP.AddIncludeDir("../of/src/freeimage/OpenEXR/IlmThread");
-  rCPP.AddIncludeDir("../of/src/freeimage/OpenEXR/Imath");
-  rCPP.AddIncludeDir("../of/src/rtaudio");
-  rCPP.AddIncludeDir("../of/src/rtaudio/include");
-  rCPP.AddIncludeDir("../of/src/utf8cpp");
-  rCPP.AddIncludeDir("../of/src/utf8cpp/include");
-  rCPP.AddIncludeDir("../of/src/utf8cpp/include/utf8");
-  rCPP.AddIncludeDir("../of/src/glew");
-  rCPP.AddIncludeDir("../of/src/glew/include");
-  rCPP.AddIncludeDir("../of/src/glfw");
-  rCPP.AddIncludeDir("../of/src/glfw/include");
-  rCPP.AddIncludeDir("../of/src/glfw/include/GLFW");
-  rCPP.AddIncludeDir("../of/src/kissfft");
-  rCPP.AddIncludeDir("../of/src/kissfft/tools");
-  rCPP.AddIncludeDir("../of/src/poco");
-  rCPP.AddIncludeDir("../of/src/poco/Crypto/include");
-  rCPP.AddIncludeDir("../of/src/poco/Foundation/include");
-  rCPP.AddIncludeDir("../of/src/poco/Net/include");
-  rCPP.AddIncludeDir("../of/src/poco/NetSSL_OpenSSL/include");
-  rCPP.AddIncludeDir("../of/src/poco/Util/include");
-  rCPP.AddIncludeDir("../of/src/poco/XML/include");
-  rCPP.AddIncludeDir("../of/src/poco/Zip/include");
-  rCPP.AddIncludeDir("../of/src/rtaudio");
-  rCPP.AddIncludeDir("../of/src/rtaudio/include");
-  rCPP.AddIncludeDir("../of/src/libtess2");
-  rCPP.AddIncludeDir("../of/src/libtess2/Include");
-  rCPP.AddIncludeDir("../of/src/libtess2/Sources");
+  rCPP.AddIncludeDir("../../of/src/freeimage");
+  rCPP.AddIncludeDir("../../of/src/freeimage/OpenEXR");
+  rCPP.AddIncludeDir("../../of/src/freeimage/OpenEXR/Half");
+  rCPP.AddIncludeDir("../../of/src/freeimage/OpenEXR/Iex");
+  rCPP.AddIncludeDir("../../of/src/freeimage/OpenEXR/IlmImf");
+  rCPP.AddIncludeDir("../../of/src/freeimage/OpenEXR/IlmThread");
+  rCPP.AddIncludeDir("../../of/src/freeimage/OpenEXR/Imath");
+  rCPP.AddIncludeDir("../../of/src/rtaudio");
+  rCPP.AddIncludeDir("../../of/src/rtaudio/include");
+  rCPP.AddIncludeDir("../../of/src/utf8cpp");
+  rCPP.AddIncludeDir("../../of/src/utf8cpp/include");
+  rCPP.AddIncludeDir("../../of/src/utf8cpp/include/utf8");
+  rCPP.AddIncludeDir("../../of/src/glew");
+  rCPP.AddIncludeDir("../../of/src/glew/include");
+  rCPP.AddIncludeDir("../../of/src/glfw");
+  rCPP.AddIncludeDir("../../of/src/glfw/include");
+  rCPP.AddIncludeDir("../../of/src/glfw/include/GLFW");
+  rCPP.AddIncludeDir("../../of/src/kissfft");
+  rCPP.AddIncludeDir("../../of/src/kissfft/tools");
+  rCPP.AddIncludeDir("../../of/src/poco");
+  rCPP.AddIncludeDir("../../of/src/poco/Crypto/include");
+  rCPP.AddIncludeDir("../../of/src/poco/Foundation/include");
+  rCPP.AddIncludeDir("../../of/src/poco/Net/include");
+  rCPP.AddIncludeDir("../../of/src/poco/NetSSL_OpenSSL/include");
+  rCPP.AddIncludeDir("../../of/src/poco/Util/include");
+  rCPP.AddIncludeDir("../../of/src/poco/XML/include");
+  rCPP.AddIncludeDir("../../of/src/poco/Zip/include");
+  rCPP.AddIncludeDir("../../of/src/rtaudio");
+  rCPP.AddIncludeDir("../../of/src/rtaudio/include");
+  rCPP.AddIncludeDir("../../of/src/libtess2");
+  rCPP.AddIncludeDir("../../of/src/libtess2/Include");
+  rCPP.AddIncludeDir("../../of/src/libtess2/Sources");
+  rCPP.AddIncludeDir("../../of/src/openframeworks");
   rCPP.AddIncludeDir("../of/src/openframeworks");
-  rCPP.AddIncludeDir("of/src/openframeworks");
-  rCPP.AddIncludeDir("../of/src/openframeworks/3d");
-  rCPP.AddIncludeDir("../of/src/openframeworks/app");
-  rCPP.AddIncludeDir("../of/src/openframeworks/communication");
-  rCPP.AddIncludeDir("../of/src/openframeworks/events");
-  rCPP.AddIncludeDir("../of/src/openframeworks/gl");
-  rCPP.AddIncludeDir("../of/src/openframeworks/graphics");
-  rCPP.AddIncludeDir("../of/src/openframeworks/math");
-  rCPP.AddIncludeDir("../of/src/openframeworks/sound");
-  rCPP.AddIncludeDir("../of/src/openframeworks/types");
-  rCPP.AddIncludeDir("../of/src/openframeworks/utils");
-  rCPP.AddIncludeDir("../of/src/openframeworks/video");
+  rCPP.AddIncludeDir("../../of/src/openframeworks/3d");
+  rCPP.AddIncludeDir("../../of/src/openframeworks/app");
+  rCPP.AddIncludeDir("../../of/src/openframeworks/communication");
+  rCPP.AddIncludeDir("../../of/src/openframeworks/events");
+  rCPP.AddIncludeDir("../../of/src/openframeworks/gl");
+  rCPP.AddIncludeDir("../../of/src/openframeworks/graphics");
+  rCPP.AddIncludeDir("../../of/src/openframeworks/math");
+  rCPP.AddIncludeDir("../../of/src/openframeworks/sound");
+  rCPP.AddIncludeDir("../../of/src/openframeworks/types");
+  rCPP.AddIncludeDir("../../of/src/openframeworks/utils");
+  rCPP.AddIncludeDir("../../of/src/openframeworks/video");
 
-  rCPP.AddIncludeDir("RuntimeCompiledCPlusPlus/Aurora");
-  rCPP.AddIncludeDir("addons/ofxImGui/src");
-  rCPP.AddIncludeDir("addons/ofxImGui/libs/imgui/src");
-  rCPP.AddIncludeDir("../of/addons/ofxAssimpModelLoader/src");
-  rCPP.AddIncludeDir("../of/addons/ofxAssimpModelLoader/libs/assimp/include/");
-  rCPP.AddIncludeDir("./");
+  rCPP.AddIncludeDir("../RuntimeCompiledCPlusPlus/Aurora");
+  rCPP.AddIncludeDir("../addons/ofxImGui/src");
+  rCPP.AddIncludeDir("../addons/ofxImGui/libs/imgui/src");
+  rCPP.AddIncludeDir("../../of/addons/ofxAssimpModelLoader/src");
+  rCPP.AddIncludeDir("../../of/addons/ofxAssimpModelLoader/libs/assimp/include/");
+  rCPP.AddIncludeDir("..");
 
   {
     ofDirectory dir(ofFilePath::getCurrentExeDir() + "..");

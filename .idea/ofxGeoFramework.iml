@@ -1,18 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module type="CPP_MODULE" version="4">
   <component name="NewModuleRootManager">
-    <content url="file://$USER_HOME$/.CLion2016.2/system/cmake/generated/ofxGeoFramework-c3b25a2b/c3b25a2b/Debug/cotire/ofApp_CXX_prefix.hxx">
-      <sourceFolder url="file://$USER_HOME$/.CLion2016.2/system/cmake/generated/ofxGeoFramework-c3b25a2b/c3b25a2b/Debug/cotire/ofApp_CXX_prefix.hxx" isTestSource="false" />
-    </content>
-    <content url="file://$USER_HOME$/.CLion2016.2/system/cmake/generated/ofxGeoFramework-c3b25a2b/c3b25a2b/MinSizeRel/cotire/ofApp_CXX_prefix.hxx">
-      <sourceFolder url="file://$USER_HOME$/.CLion2016.2/system/cmake/generated/ofxGeoFramework-c3b25a2b/c3b25a2b/MinSizeRel/cotire/ofApp_CXX_prefix.hxx" isTestSource="false" />
-    </content>
-    <content url="file://$USER_HOME$/.CLion2016.2/system/cmake/generated/ofxGeoFramework-c3b25a2b/c3b25a2b/RelWithDebInfo/cotire/ofApp_CXX_prefix.hxx">
-      <sourceFolder url="file://$USER_HOME$/.CLion2016.2/system/cmake/generated/ofxGeoFramework-c3b25a2b/c3b25a2b/RelWithDebInfo/cotire/ofApp_CXX_prefix.hxx" isTestSource="false" />
-    </content>
-    <content url="file://$USER_HOME$/.CLion2016.2/system/cmake/generated/ofxGeoFramework-c3b25a2b/c3b25a2b/Release/cotire/ofApp_CXX_prefix.hxx">
-      <sourceFolder url="file://$USER_HOME$/.CLion2016.2/system/cmake/generated/ofxGeoFramework-c3b25a2b/c3b25a2b/Release/cotire/ofApp_CXX_prefix.hxx" isTestSource="false" />
-    </content>
     <content url="file://$MODULE_DIR$/../of/addons/ofxAssimpModelLoader/src/ofxAssimpAnimation.cpp">
       <sourceFolder url="file://$MODULE_DIR$/../of/addons/ofxAssimpModelLoader/src/ofxAssimpAnimation.cpp" isTestSource="false" />
     </content>
@@ -32,18 +20,17 @@
       <sourceFolder url="file://$MODULE_DIR$/cmake_modules/FindUDev.cmake" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/cmake_modules/FindPixman.cmake" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/cmake_modules/FindGStreamer.cmake" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/cmake_modules/cotire.cmake" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/cmake_modules/FindMPG123.cmake" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/cmake_modules/FindGlib.cmake" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/addons/ofxImGui/src/ofxImGui.cpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/addons/ofxImGui/src/BaseTheme.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/addons/ofxImGui/src/EngineOpenGLES.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/addons/ofxImGui/src/EngineGLFW.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/addons/ofxImGui/src/EngineOpenGLES.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/addons/ofxImGui/src/ofxImGui.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/addons/ofxImGui/src/BaseTheme.cpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/addons/ofxImGui/src/EngineOpenGLES.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/addons/ofxImGui/src/BaseTheme.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/addons/ofxImGui/src/EngineGLFW.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/addons/ofxImGui/src/BaseEngine.cpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/addons/ofxImGui/src/EngineGLFW.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/addons/ofxImGui/src/BaseEngine.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/addons/ofxImGui/libs/imgui/src/imgui_draw.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/addons/ofxImGui/libs/imgui/src/imgui.h" isTestSource="false" />
@@ -88,15 +75,16 @@
           <root url="file:///usr/lib/gstreamer-1.0/include" />
           <root url="file:///usr/lib/glib-2.0/include" />
           <root url="file:///usr/local/include" />
+          <root url="file://$USER_HOME$/dependencies/libigl/include" />
           <root url="file://$MODULE_DIR$/../of/src/poco" />
           <root url="file://$MODULE_DIR$/../of/src/kissfft" />
-          <root url="file://$MODULE_DIR$/../of/src/glew" />
-          <root url="file://$MODULE_DIR$/../of/src/glfw" />
           <root url="file://$MODULE_DIR$/../of/src/freeimage" />
+          <root url="file://$MODULE_DIR$/../of/src/glfw" />
+          <root url="file://$MODULE_DIR$/../of/src/utf8cpp" />
           <root url="file://$MODULE_DIR$/../of/src/openframeworks" />
           <root url="file://$MODULE_DIR$/../of/src/rtaudio" />
           <root url="file://$MODULE_DIR$/../of/src/libtess2" />
-          <root url="file://$MODULE_DIR$/../of/src/utf8cpp" />
+          <root url="file://$MODULE_DIR$/../of/src/glew" />
           <root url="file://$MODULE_DIR$/../of/addons/ofxAssimpModelLoader/src" />
         </CLASSES>
         <SOURCES>
@@ -107,15 +95,16 @@
           <root url="file:///usr/lib/gstreamer-1.0/include" />
           <root url="file:///usr/lib/glib-2.0/include" />
           <root url="file:///usr/local/include" />
+          <root url="file://$USER_HOME$/dependencies/libigl/include" />
           <root url="file://$MODULE_DIR$/../of/src/poco" />
           <root url="file://$MODULE_DIR$/../of/src/kissfft" />
-          <root url="file://$MODULE_DIR$/../of/src/glew" />
-          <root url="file://$MODULE_DIR$/../of/src/glfw" />
           <root url="file://$MODULE_DIR$/../of/src/freeimage" />
+          <root url="file://$MODULE_DIR$/../of/src/glfw" />
+          <root url="file://$MODULE_DIR$/../of/src/utf8cpp" />
           <root url="file://$MODULE_DIR$/../of/src/openframeworks" />
           <root url="file://$MODULE_DIR$/../of/src/rtaudio" />
           <root url="file://$MODULE_DIR$/../of/src/libtess2" />
-          <root url="file://$MODULE_DIR$/../of/src/utf8cpp" />
+          <root url="file://$MODULE_DIR$/../of/src/glew" />
           <root url="file://$MODULE_DIR$/../of/addons/ofxAssimpModelLoader/src" />
         </SOURCES>
         <excluded>

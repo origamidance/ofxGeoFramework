@@ -21,9 +21,9 @@ do
 	   cd build/
 	  if [[ "$arg" = "debug" ]]
 	  then
-		    CC=$CC CXX=$CXX cmake -GNinja -DCMAKE_BUILD_TYPE=Debug -DBUILD_FOR_RUN=ON ..
+		    CC=$CC CXX=$CXX cmake -GNinja -DCMAKE_BUILD_TYPE=Debug -DBUILD_FOR_RUN=ON -DUSE_COTIRE=ON ..
 	  elif [[ "$arg" = "release" ]]
 	  then
-		    cmake -DCMAKE_CXX_COMPILER=$CXX -DCMAKE_C_COMPILER=$CC -GNinja -DCMAKE_BUILD_TYPE=Release -DBUILD_FOR_RUN=ON ..
+		    cmake -DCMAKE_CXX_COMPILER=$CXX -DCMAKE_C_COMPILER=$CC -GNinja -DCMAKE_BUILD_TYPE=Release -DBUILD_FOR_RUN=ON -DUSE_COTIRE=ON ..
 	  fi
 done

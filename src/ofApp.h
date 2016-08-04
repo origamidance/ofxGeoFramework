@@ -7,6 +7,7 @@
 
 #define RED(x) "\033[31m" << x << "\033[0m"
 
+typedef int testint;
 class ofApp : public ofLiveApp
 {
 public:
@@ -72,7 +73,7 @@ public:
 
     ofxAssimpModelLoader model;
     ofLight light;
-    int lightPosArray[3];
+    int lightPosArray[3]={100,100,100};
     ofMaterial mat;
 
     // stores the info on the current file.
@@ -86,7 +87,9 @@ public:
     bool bUsingMesh;
     ofEasyCam cam;
 
-
+    float bgColor[3]={133/255.0,150/255.0,220/255.0};
+    ofImage snapshot;
+  ofImage testshot;
     SERIALIZE_BEGIN
         //SERIALIZE()
     SERIALIZE_END

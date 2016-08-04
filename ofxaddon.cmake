@@ -227,6 +227,7 @@ function(ofxaddon OFXADDON)
                 "${OFXADDON_DIR}/src/*.h"
                 "${OFXADDON_DIR}/src/*.hh"
                 "${OFXADDON_DIR}/src/*.hpp"
+                "${OFXADDON_DIR}/src/*CMakeLists.txt"
                 "${OFXADDON_DIR}/libs/*.h"
                 "${OFXADDON_DIR}/libs/*.hh"
                 "${OFXADDON_DIR}/libs/*.hpp"
