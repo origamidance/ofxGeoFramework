@@ -81,7 +81,7 @@ public:
 
     //boolean to toggle help text
     bool bHelpText;
-
+  
     // for demonstrating loading in models directly into a mesh without using ofxAssimpModelLoader
     ofVboMesh mesh;
     bool bUsingMesh;
