@@ -10,8 +10,8 @@
 #include <RuntimeObjectSystem/IObject.h>
 #endif
 
-//#ifdef RCCPP
-#if defined(RCCPP) && defined(RUNCODE)
+#ifdef RCCPP
+//#if defined(RCCPP) && defined(RUNCODE)
 #define ofLiveApp TInterface<IID_IOBJECT,IObject>, public ofBaseApp
 #else
 #define ofLiveApp ofBaseApp

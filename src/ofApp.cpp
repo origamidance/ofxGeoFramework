@@ -1,12 +1,26 @@
 #include "ofApp.h"
-#include <igl/readSTL.h>
-#include "Eigen/Core"
 
 #ifdef RUNCODE
 REGISTERCLASS(ofApp)
 #endif
 
 void ofApp::setup() {
+
+  // vbo.setVertexData( &v[0], 12, GL_STATIC_DRAW );
+  // vbo.setIndexData( &Faces[0], 60, GL_STATIC_DRAW );
+  igl::readSTL("/home/origamidance/Research/mech_trans/data/geometryMeshes/bear.stl", V, F, N);
+  V=V*100;
+  ofFloatColor *c=new ofFloatColor[V.rows()];
+  for (int i = 0; i < V.rows(); i++) {
+    c[i].r = ofRandom(1.0);
+    c[i].g = ofRandom(1.0);
+    c[i].b = ofRandom(1.0);
+  }
+  vbo.setVertexData(&V.data()[0],3, V.rows(), GL_STATIC_DRAW);
+  vbo.setColorData(&c[0], V.rows(), GL_STATIC_DRAW );
+  vbo.setIndexData((uint*)F.data(), F.size(), GL_STATIC_DRAW);
+  std::cout << vbo.getNumIndices() << "\n";
+
   ofSetLogLevel(OF_LOG_VERBOSE);
   ofSetVerticalSync(false);
   ofBackground(ofColor(bgColor[0] * 255, bgColor[1] * 255, bgColor[2] * 255));
@@ -87,7 +101,11 @@ void ofApp::draw() {
   // draws the ply file loaded into the mesh is you pressed 6
   if (bUsingMesh) {
 //        cam.begin();
-    mesh.draw();
+    // ofTranslate(ofGetWidth()/2, ofGetHeight()/2, 100);
+    // ofRotate(ofGetElapsedTimef() * 20.0, 1, 1, 0);
+    glPointSize(10.f);
+    vbo.drawElements( GL_TRIANGLES, F.size());    // mesh.draw();
+    // mesh.draw();
 //        cam.end();
   }
     // draws all the other file types which are loaded into model.
@@ -98,7 +116,9 @@ void ofApp::draw() {
 //        ofColor(255, 255, 255);
     mat.begin();
 //        ofNoFill();
-        model.drawFaces();
+    glPointSize(10.f);
+    vbo.drawElements( GL_TRIANGLES, F.size());    // mesh.draw();
+        // model.drawFaces();
 //    ofDrawSphere(20);
     mat.end();
 //        cam.end();

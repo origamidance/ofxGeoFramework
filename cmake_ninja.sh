@@ -7,9 +7,9 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
     export CC="clang"
     export CXX="clang++"
 fi
-cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=ON .
-rm -rf CMakeCache.txt CMakeFiles cmake_install.cmake Makefile
-echo "compile_commands.json built"
+# cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=ON .
+# rm -rf CMakeCache.txt CMakeFiles cmake_install.cmake Makefile
+# echo "compile_commands.json built"
 rm -rf build
 for arg in "$*"
 do

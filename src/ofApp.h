@@ -1,9 +1,15 @@
 #pragma once
 
+#ifdef Success
+#undef Success
+#endif
 #include "ofLiveMain.h"
 #include "ofxImGui.h"
 #include "ThemeTest.h"
 #include "ofxAssimpModelLoader.h"
+#undef Success
+#include <igl/readSTL.h>
+#include <Eigen/Core>
 
 #define RED(x) "\033[31m" << x << "\033[0m"
 
@@ -89,6 +95,9 @@ public:
 
     float bgColor[3]={133/255.0,150/255.0,220/255.0};
     ofImage snapshot;
+  Eigen::MatrixXf V,N;
+  Eigen::MatrixXi F;
+  ofVbo vbo;
   ofImage testshot;
     SERIALIZE_BEGIN
         //SERIALIZE()

@@ -34,14 +34,12 @@ endif()
 
 # include(../of/openFrameworks.cmake)
 include(ofxaddon.cmake)
-#set(OF_ROOT_DIR ../of)
-set(OF_ROOT_DIR /home/origamidance/dependencies/openFrameworks)
-set(OF_LIB_DIR ${OF_ROOT_DIR}/libs)
-#if(CMAKE_BUILD_TYPE MATCHES Release)
-#  set(OF_LIB_DIR "${OF_ROOT_DIR}/lib-linux/release-${OF_PLATFORM}-${ARCH_BIT}")
-#elseif(CMAKE_BUILD_TYPE MATCHES Debug)
-#  set(OF_LIB_DIR "${OF_ROOT_DIR}/lib-linux/debug-${OF_PLATFORM}-${ARCH_BIT}")
-#endif()
+set(OF_ROOT_DIR ../of)
+if(CMAKE_BUILD_TYPE MATCHES Release)
+  set(OF_LIB_DIR "${OF_ROOT_DIR}/lib-linux/release-${OF_PLATFORM}-${ARCH_BIT}")
+elseif(CMAKE_BUILD_TYPE MATCHES Debug)
+  set(OF_LIB_DIR "${OF_ROOT_DIR}/lib-linux/debug-${OF_PLATFORM}-${ARCH_BIT}")
+endif()
 
 set(OF_AUDIO ON CACHE BOOL "Compile audio features of openFrameworks")
 set(OF_VIDEO ON CACHE BOOL "Compile video features of openFrameworks")
@@ -72,48 +70,82 @@ find_package(UDev REQUIRED)
 find_package(Glib REQUIRED)
 find_package(GStreamer REQUIRED)
 pkg_check_modules(GTK3 REQUIRED gtk+-3.0)
-#find_path(OPENFRAMEWORKS_INCLUDE_DIRS
-#        NAMES ofLight.h
-#        PATHS ${OF_LIB_DIR}/*/ofLight.h
-#        NO_DEFAULT_PATH)
-file(GLOB_RECURSE OPENFRAMEWORKS_INCLUDE_FILES
-        ${OF_LIB_DIR}/*.h)
-foreach (infiles ${OPENFRAMEWORKS_INCLUDE_FILES})
-    get_filename_component(infiledir ${infiles} DIRECTORY)
-    list(APPEND OPENFRAMEWORKS_INCLUDE_DIRS ${infiledir})
-endforeach ()
-list(REMOVE_DUPLICATES OPENFRAMEWORKS_INCLUDE_DIRS)
-# get_filename_component(OPENFRAMEWORKS_INCLUDE_DIRS ${TEST} DIRECTORY)
-message("of directory:${OPENFRAMEWORKS_INCLUDE_DIRS}")
 set(OPENFRAMEWORKS_INCLUDE_DIRS
-       #    ${X11_INCLUDE_DIR}
-       ${ZLIB_INCLUDE_DIRS}
-       ${PIXMAN_INCLUDE_DIRS}
-       ${CAIRO_INCLUDE_DIRS}
-       ${Boost_INCLUDE_DIRS}
-       ${OPENGL_INCLUDE_DIR}
-       ${OPENSSL_INCLUDE_DIR}
-       ${FREETYPE_INCLUDE_DIRS}
-       ${FONTCONFIG_INCLUDE_DIRS}
-       ${GLEW_INCLUDE_DIRS}
-       #    ${ALSA_INCLUDE_DIRS}
-       #    ${OPENAL_INCLUDE_DIR}
-       #    ${MPG123_INCLUDE_DIRS}
-       #    ${SNDFILE_INCLUDE_DIR}
-       ${UDEV_INCLUDE_DIR}
-       ${GLIB_INCLUDE_DIRS}
-       ${GTK3_INCLUDE_DIRS}
-       ${GSTREAMER_INCLUDE_DIRS}
+   "${OF_ROOT_DIR}/src/openframeworks"
+    "${OF_ROOT_DIR}/src/openframeworks/3d"
+    "${OF_ROOT_DIR}/src/openframeworks/app"
+    "${OF_ROOT_DIR}/src/openframeworks/communication"
+    "${OF_ROOT_DIR}/src/openframeworks/events"
+    "${OF_ROOT_DIR}/src/openframeworks/gl"
+    "${OF_ROOT_DIR}/src/openframeworks/graphics"
+    "${OF_ROOT_DIR}/src/openframeworks/math"
+    "${OF_ROOT_DIR}/src/openframeworks/sound"
+    "${OF_ROOT_DIR}/src/openframeworks/types"
+    "${OF_ROOT_DIR}/src/openframeworks/utils"
+    "${OF_ROOT_DIR}/src/openframeworks/video"
+
+    "${OF_ROOT_DIR}/src/freeimage"
+    "${OF_ROOT_DIR}/src/freeimage/OpenEXR"
+    "${OF_ROOT_DIR}/src/freeimage/OpenEXR/Half"
+    "${OF_ROOT_DIR}/src/freeimage/OpenEXR/Iex"
+    "${OF_ROOT_DIR}/src/freeimage/OpenEXR/IlmImf"
+    "${OF_ROOT_DIR}/src/freeimage/OpenEXR/IlmThread"
+    "${OF_ROOT_DIR}/src/freeimage/OpenEXR/Imath"
+
+    "${OF_ROOT_DIR}/src/glew"
+    "${OF_ROOT_DIR}/src/glew/include"
+
+    "${OF_ROOT_DIR}/src/glfw"
+    "${OF_ROOT_DIR}/src/glfw/include"
+    "${OF_ROOT_DIR}/src/glfw/include/GLFW"
+
+    "${OF_ROOT_DIR}/src/kissfft"
+    "${OF_ROOT_DIR}/src/kissfft/tools"
+
+    "${OF_ROOT_DIR}/src/libtess2"
+    "${OF_ROOT_DIR}/src/libtess2/Include"
+    "${OF_ROOT_DIR}/src/libtess2/Source"
+
+    "${OF_ROOT_DIR}/src/poco"
+    "${OF_ROOT_DIR}/src/poco/Crypto/include"
+    "${OF_ROOT_DIR}/src/poco/Foundation/include"
+    "${OF_ROOT_DIR}/src/poco/Net/include"
+    "${OF_ROOT_DIR}/src/poco/NetSSL_OpenSSL/include"
+    "${OF_ROOT_DIR}/src/poco/Util/include"
+    "${OF_ROOT_DIR}/src/poco/XML/include"
+    "${OF_ROOT_DIR}/src/poco/Zip/include"
+
+    "${OF_ROOT_DIR}/src/rtaudio"
+    "${OF_ROOT_DIR}/src/rtaudio/include"
+
+    "${OF_ROOT_DIR}/src/utf8cpp"
+    "${OF_ROOT_DIR}/src/utf8cpp/include"
+        #    ${X11_INCLUDE_DIR}
+        ${ZLIB_INCLUDE_DIRS}
+        ${PIXMAN_INCLUDE_DIRS}
+        ${CAIRO_INCLUDE_DIRS}
+        ${Boost_INCLUDE_DIRS}
+        ${OPENGL_INCLUDE_DIR}
+        ${OPENSSL_INCLUDE_DIR}
+        ${FREETYPE_INCLUDE_DIRS}
+        ${FONTCONFIG_INCLUDE_DIRS}
+        ${GLEW_INCLUDE_DIRS}
+        #    ${ALSA_INCLUDE_DIRS}
+        #    ${OPENAL_INCLUDE_DIR}
+        #    ${MPG123_INCLUDE_DIRS}
+        #    ${SNDFILE_INCLUDE_DIR}
+        ${UDEV_INCLUDE_DIR}
+        ${GLIB_INCLUDE_DIRS}
+        ${GTK3_INCLUDE_DIRS}
+        ${GSTREAMER_INCLUDE_DIRS}
 )
 
-# if (BUILD_FOR_RUN)
+if (BUILD_FOR_RUN)
     add_definitions(-DRUNCODE)
-file(GLOB_RECURSE OPENFRAMEWORKS_LIBS_STATIC "${OF_LIB_DIR}/*/linux64/*.a")
-file(GLOB_RECURSE OPENFRAMEWORKS_LIBS_DINAMIC "${OF_LIB_DIR}/*.so")
-message("of libs: ${OPENFRAMEWORKS_LIBS_STATIC}")
+file(GLOB_RECURSE OPENFRAMEWORKS_LIBS "${OF_LIB_DIR}/*.so")
 if(NOT OPENFRAMEWORKS_LIBS)
  message(FATAL_ERROR "No shared openFrameworks libraries found in ${OF_LIB_DIR} folder.")
-# endif()
+endif()
 
 set(OPENFRAMEWORKS_LIBRARIES
  ${OPENFRAMEWORKS_LIBS}
@@ -158,7 +190,7 @@ set(CMAKE_CXX_FLAGS
 
 #// LIVECODING /////////////////////////////////////////////////////////////////
 
-set(OF_ENABLE_LIVECODING ON CACHE BOOL "")
+set(OF_ENABLE_LIVECODING OFF CACHE BOOL "")
 message("++ OF_ENABLE_LIVECODING: " ${OF_ENABLE_LIVECODING})
 
 if(OF_ENABLE_LIVECODING)
