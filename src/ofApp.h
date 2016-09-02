@@ -9,6 +9,7 @@
 #include "ofxAssimpModelLoader.h"
 #undef Success
 #include <igl/readSTL.h>
+#include <igl/readPLY.h>
 #include <Eigen/Core>
 
 #define RED(x) "\033[31m" << x << "\033[0m"

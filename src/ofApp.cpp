@@ -1,4 +1,5 @@
 #include "ofApp.h"
+#include <igl/remove_duplicate_vertices.h>
 
 #ifdef RUNCODE
 REGISTERCLASS(ofApp)
@@ -8,17 +9,77 @@ void ofApp::setup() {
 
   // vbo.setVertexData( &v[0], 12, GL_STATIC_DRAW );
   // vbo.setIndexData( &Faces[0], 60, GL_STATIC_DRAW );
-  igl::readSTL("/home/origamidance/Research/mech_trans/data/geometryMeshes/bear.stl", V, F, N);
-  V=V*100;
-  ofFloatColor *c=new ofFloatColor[V.rows()];
-  for (int i = 0; i < V.rows(); i++) {
+  // igl::readSTL("/home/origamidance/Research/mech_trans/data/geometryMeshes/box.stl", V, F, N);
+  // igl::readPLY( "/home/origamidance/Research/mech_trans/data/geometryMeshes/Box.ply", V, F);
+  Eigen::MatrixXf temp_V;
+  Eigen::VectorXi SVI,SVJ;
+  bool success = igl::readSTL("/home/origamidance/Research/mech_trans/data/geometryMeshes/box.stl",temp_V,F,N);
+  igl::remove_duplicate_vertices(temp_V,0,V,SVI,SVJ);
+    for_each(F.data(),F.data()+F.size(),[&SVJ](int & f){f=SVJ(f);});
+  V=V*10;
+  // ofFloatColor *c=new ofFloatColor[V.rows()];
+  // for (int i = 0; i < V.rows(); i++) {
+  //   c[i].r = ofRandom(1.0);
+  //   c[i].g = ofRandom(1.0);
+  //   c[i].b = ofRandom(1.0);
+  // }
+  float Verts[] = {
+    0.000f,  0.000f,  1.000f,
+    0.894f,  0.000f,  0.447f,
+    0.276f,  0.851f,  0.447f,
+    -0.724f,  0.526f,  0.447f,
+    -0.724f, -0.526f,  0.447f,
+    0.276f, -0.851f,  0.447f,
+    0.724f,  0.526f, -0.447f,
+    -0.276f,  0.851f, -0.447f,
+    -0.894f,  0.000f, -0.447f,
+    -0.276f, -0.851f, -0.447f,
+    0.724f, -0.526f, -0.447f,
+    0.000f,  0.000f, -1.000f };
+  ofVec3f v[12];
+  int j=0;
+  ofFloatColor c[12];
+  for (int i = 0; i < 12; i++) {
     c[i].r = ofRandom(1.0);
     c[i].g = ofRandom(1.0);
     c[i].b = ofRandom(1.0);
+    v[i][0] = Verts[j] * 100.f;
+    j++;
+    v[i][1] = Verts[j] * 100.f;
+    j++;
+    v[i][2] = Verts[j] * 100.f;
+    j++;
+
   }
-  vbo.setVertexData(&V.data()[0],3, V.rows(), GL_STATIC_DRAW);
-  vbo.setColorData(&c[0], V.rows(), GL_STATIC_DRAW );
-  vbo.setIndexData((uint*)F.data(), F.size(), GL_STATIC_DRAW);
+  const ofIndexType Faces[] = {
+    2, 1, 0,
+    3, 2, 0,
+    4, 3, 0,
+    5, 4, 0,
+    1, 5, 0,
+    11, 6,  7,
+    11, 7,  8,
+    11, 8,  9,
+    11, 9,  10,
+    11, 10, 6,
+    1, 2, 6,
+    2, 3, 7,
+    3, 4, 8,
+    4, 5, 9,
+    5, 1, 10,
+    2,  7, 6,
+    3,  8, 7,
+    4,  9, 8,
+    5, 10, 9,
+    1, 6, 10 };
+  // const ofIndexType Faces[] = {
+  //   2, 1, 0};
+  // vbo.setVertexData(&V.data()[0],3, V.rows(), GL_STATIC_DRAW);
+  // vbo.setColorData(&c[0], V.rows(), GL_STATIC_DRAW );
+  // vbo.setIndexData((uint*)F.data(), F.size(), GL_STATIC_DRAW);
+  vbo.setVertexData(&Verts[0],5,12, GL_STATIC_DRAW,1);
+  // vbo.setVertexData(&v[0],12, GL_STATIC_DRAW);
+  vbo.setIndexData(&Faces[0], 60, GL_STATIC_DRAW);
   std::cout << vbo.getNumIndices() << "\n";
 
   ofSetLogLevel(OF_LOG_VERBOSE);
@@ -104,7 +165,7 @@ void ofApp::draw() {
     // ofTranslate(ofGetWidth()/2, ofGetHeight()/2, 100);
     // ofRotate(ofGetElapsedTimef() * 20.0, 1, 1, 0);
     glPointSize(10.f);
-    vbo.drawElements( GL_TRIANGLES, F.size());    // mesh.draw();
+    // vbo.drawElements( GL_TRIANGLES, F.size());    // mesh.draw();
     // mesh.draw();
 //        cam.end();
   }
@@ -117,7 +178,7 @@ void ofApp::draw() {
     mat.begin();
 //        ofNoFill();
     glPointSize(10.f);
-    vbo.drawElements( GL_TRIANGLES, F.size());    // mesh.draw();
+    vbo.drawElements( GL_TRIANGLES, 60);    // mesh.draw();
         // model.drawFaces();
 //    ofDrawSphere(20);
     mat.end();
