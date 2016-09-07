@@ -80,7 +80,7 @@ public:
 
     ofxAssimpModelLoader model;
     ofLight light;
-    int lightPosArray[3]={100,100,100};
+    int lightPosArray[3]={1000,1000,1000};
     ofMaterial mat;
 
     // stores the info on the current file.
@@ -94,7 +94,8 @@ public:
     bool bUsingMesh;
     ofEasyCam cam;
 
-    float bgColor[3]={133/255.0,150/255.0,220/255.0};
+    // float bgColor[3]={133/255.0,150/255.0,220/255.0};
+  float bgColor[3]={0,0,0};
     ofImage snapshot;
   Eigen::MatrixXf V,N;
   Eigen::MatrixXi F;
